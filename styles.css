@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle, #8e44ad, #3498db);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.full-width-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 20px;
+    background: radial-gradient(circle, #8e44ad, #3498db);
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    border-radius: 50px;
+    padding: 5vw;
+    width: 100%;
+    max-width: 1200px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-size: 6vw; /* Responsive font size */
+    color: #2c3e50;
+    margin-bottom: 5vh;
+    text-shadow: 3px 3px #ecf0f1;
+}
+
+.dice-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.dice {
+    font-size: 15vw; /* Responsive font size for dice */
+    background-color: #ffffff;
+    color: #2c3e50;
+    width: 30vw;
+    height: 30vw;
+    line-height: 30vw;
+    text-align: center;
+    border-radius: 10vw;
+    border: 1vw solid #34495e;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.dice.rolling {
+    transform: rotate(1080deg) scale(1.15);
+    box-shadow: 0 0 50px 15px rgba(241, 196, 15, 0.8);
+}
+
+button {
+    background: linear-gradient(to right, #e74c3c, #f39c12);
+    color: white;
+    padding: 20px 50px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 2.5vw;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 5vh;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background: linear-gradient(to right, #f39c12, #e74c3c);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content h2 {
+    font-size: 6vw;
+    color: #27ae60;
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    font-size: 5vw;
+    color: #2c3e50;
+}
+
+.close-btn {
+    color: #aaaaaa;
+    font-size: 5vw;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .dice {
+        font-size: 18vw;
+        width: 40vw;
+        height: 40vw;
+        line-height: 40vw;
+        border-radius: 10vw;
+        border-width: 1.5vw;
+    }
+
+    button {
+        padding: 15px 40px;
+        font-size: 4vw;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+
+    .modal-content h2 {
+        font-size: 7vw;
+    }
+
+    .modal-content p {
+        font-size: 6vw;
+    }
+
+    .close-btn {
+        font-size: 6vw;
+    }
+}
